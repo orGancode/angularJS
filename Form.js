@@ -14,6 +14,12 @@ userInfoModule.controller('UserInfoCtrl',['$scope', function ($scope) {
       password:'1234123412341',
       autoLogin:false
     }
-
+  }
+  $scope.restForm=function(){
+    $scope.userInfo={
+      email:'',
+      password:'',
+      autoLogin:false
+    }
   }
 }])
