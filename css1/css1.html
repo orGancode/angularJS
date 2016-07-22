@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="MyCssModule">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css1.css">
+  <link rel="stylesheet" href="../bootstrap.css">
+
+</head>
+<body>
+  <div ng-controller="CSSCtrl">
+    <p class="text-{{color}}">测试CSS样式</p>
+    <button class="btn btn-default" ng-click="setGreen()">绿色</button>
+  </div>
+</body>
+<script src="../angular.js"></script><!--必须放在所有js前，尤其是使用了angular.js的js-->
+<script src="css1.js"></script>
+<!--<script src="../angular.js"></script>//I have met a similar situation and i think you should put the include angular line first, before include any other js file-->
+</html>
