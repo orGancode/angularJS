@@ -5,11 +5,12 @@
         <title></title>
         <script src="../Js/angular.js"></script>
         <link rel="stylesheet" href="bootstrap.css">
+        <script src="Form.js"></script>
         <style>
                 /*div{border: 1px solid #00aa00}*/
         </style>
 </head>
-<body>
+<body ng-app="UserInfoModule">
 <div class="panel panel-primary">
         <div class="panel-heading">
                 <div class="panel-title">双向数据绑定</div>
@@ -18,13 +19,13 @@
       <div class="panel-body">
               <div class="row">
                       <div class="col-md-12">
-                              <form action="" class="form-horizontal" role="form">
+                              <form ng-controller="UserInfoCtrl" class="form-horizontal" role="form">
                                       <div class="form-group">
                                               <label class="col-md-2 control-label">
                                                       邮箱
                                               </label>
                                               <div class="col-md-10">
-                                                      <input type="email" class="form-control" placeholder="请输入您的邮箱地址">
+                                                      <input type="email" class="form-control" placeholder="请输入您的邮箱地址" ng-model="userInfo.email">
                                               </div>
                                       </div>
                                       <div class="form-group">
@@ -32,18 +33,20 @@
                                                       密码
                                               </label>
                                               <div class="col-md-10">
-                                                      <input type="password" class="form-control" placeholder="请输入您的密码">
+                                                      <input type="password" class="form-control" placeholder="请输入您的密码" ng-model="userInfo.password">
                                               </div>
                                       </div>
                                       <div class="form-group">
                                               <div class="col-md-offset-2 col-md-10">
                                                       <div class="checkbox">
-
-                                                              <label for=""><input type="checkbox">自动登录</label>
-
-
-
+                                                              <label><input type="checkbox" ng-model="userInfo.autoLogin">自动登录</label>
                                                       </div>
+                                              </div>
+                                      </div>
+                                      <div class="form-group">
+                                              <div class="col-md-offset-2 col-md-10">
+                                                      <button class="btn btn-default" ng-click="getFormData()">获取Form表单的值</button>
+                                                      <button class="btn btn-default" ng-click="setFormData()">获取Form表单的值</button>
                                               </div>
                                       </div>
                               </form>
